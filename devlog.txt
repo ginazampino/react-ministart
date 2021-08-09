@@ -1,0 +1,22 @@
+When webpack projects 404 on the main.js (or bundle.js), it's because
+Express isn't set up to handle static files.
+
+The way I used to set up babel is just completely different now.
+Only a few packages are needed, and a .babelrc file seems to be
+the easiest way to load presets.
+
+The correct order for style loaders kind of backwards.
+style > css > sass.
+sass-loader compiles scss into css.
+css-loader compiles css into commonjs.
+style-loader compiles the commonjs into more js, idk.
+But sass is on the bottom, and style on the top.
+
+If no styles are showing, it's because the index.scss needs to be imported
+into the index.js file for Webpack to detect it. Don't need to do anything
+with it, just add it. No references needed.
+
+.env is cool, but it's case sensitive. be careful. add it to .gitignore.
+
+Keeping react applications organized is going to be tough. try to use
+how work does it.
